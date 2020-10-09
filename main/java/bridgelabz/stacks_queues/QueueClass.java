@@ -17,7 +17,9 @@ public class QueueClass<Key> {
 	
 	public LinkedListNode<Key> dequeue() {
 		queueSize--;
-		return (LinkedListNode<Key>) linkedList.pop();
+		if (!isEmpty()) return (LinkedListNode<Key>) linkedList.pop();
+		else System.out.println("Queue is empty. Cannot dequeue.");
+		return new LinkedListNode<Key>(null);
 	}
 	
 	public boolean isEmpty() {
